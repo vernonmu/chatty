@@ -1,32 +1,32 @@
 <div class="header">
-  <h3 class="text-muted">chatty</h3>
+    <h3 class="text-muted">chatty</h3>
 </div>
 
-<h4>Latest Chats:</h4>
 <div class="jumbotron">
 
 
-  <form class="">
-    <label>
-      alias:
-    </label>
-    <input class="vm-input-username" ng-model="username" type="text" name="" placeholder="username">
-  </form>
-	<form ng-submit="addMessage(newMessage)">
-    <label>
-      msg:
-    </label>
-		<input class="vm-input-message" ng-model="newMessage" type="text" placeholder="Message!">
-	</form>
-  <p><strong>msgs</strong></p>
-  <div class="vm-container-msg">
-	   <div ng-repeat="message in messages track by $index">
-        <div class="vm-message">
-          <strong>{{ username }}</strong>: {{ message.message }}
-        </div>
-        <div class="vm-time">
-          <small>{{ message.time }}</small>
+
+    <form>
+        <label>
+          alias:
+        </label>
+        <input class="vm-input-username" ng-model="user.user" type="text" name="" placeholder="username"><br>
+        <label>
+          msg:
+        </label>
+        <input class="vm-input-message" ng-model="user.message" type="text" placeholder="Message!">
+        <button type="button" ng-click="addMessage(user)" name="button">send</button>
+    </form>
+    <p><strong>msgs</strong></p>
+    <div class="vm-container-msg">
+        <div ng-repeat="message in messages track by $index">
+          <div class="vm-time">
+              <small>{{ message.time }}</small>
+          </div>
+            <div class="vm-message">
+                <strong>{{ message.user }}</strong>: {{ message.message }}
+            </div>
+
         </div>
     </div>
-  </div>
 </div>

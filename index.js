@@ -12,14 +12,18 @@ var messages = []
 // end points
 
 app.get('/messages', function (req, res, next) {
-  res.status(200).json({messages:messages})
+  res.status(200).json(messages)
 })
+
 
 app.post('/messages', function (req, res, next) {
   let d = new Date()
 
-  messages.push({ message: req.body.message, time: d.toLocaleTimeString() })
-  res.status(200).json({messages: messages})
+  // console.log(req.body, "user", req.body.user, req.body.messages)
+
+  messages.push({ user: req.body.user, message: req.body.message, time: d.toLocaleTimeString() })
+  res.status(200).json(messages)
+
 })
 
 // start app

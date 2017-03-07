@@ -5,10 +5,28 @@
 <h4>Latest Chats:</h4>
 <div class="jumbotron">
 
+
+  <form class="">
+    <label>
+      alias:
+    </label>
+    <input class="vm-input-username" ng-model="username" type="text" name="" placeholder="username">
+  </form>
 	<form ng-submit="addMessage(newMessage)">
-		<input ng-model="newMessage" type="text" placeholder="Hello!">
+    <label>
+      msg:
+    </label>
+		<input class="vm-input-message" ng-model="newMessage" type="text" placeholder="Message!">
 	</form>
-
-	<div ng-repeat="message in messages track by $index">{{ message }}</div>
-
+  <p><strong>msgs</strong></p>
+  <div class="vm-container-msg">
+	   <div ng-repeat="message in messages track by $index">
+        <div class="vm-message">
+          <strong>{{ username }}</strong>: {{ message.message }}
+        </div>
+        <div class="vm-time">
+          <small>{{ message.time }}</small>
+        </div>
+    </div>
+  </div>
 </div>

@@ -94,7 +94,7 @@ Now that we have basic functionality, let's do some server-side data manipulatio
 
 First, lets change our `messages` array — from an array of strings to an array of objects. This way, we can assign multiple properties to each message: `time` and `message`. Let's do this by pushing a newly created object to our array instead of just the message sent to us.
 ```javascript
-messages.push({ message: req.body.message, time: new Date() });
+messages.push({ message: req.body.message, time: new Date().toLocaleString });
 ```
 
 Second, we need to make a small adjustment to our client-side code to handle this new data structure. The ng-repeat of over our messages will need to look simlar to this:

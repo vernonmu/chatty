@@ -31,6 +31,35 @@ body {
   border-top: 1px solid #e5e5e5;
 }
 
+.vm-time {
+  display:inline-block;
+  color:green;
+}
+
+.vm-message {
+  display:inline-block;
+}
+
+.vm-input-message {
+  width:70%;
+  min-width:200px;
+  text-align: left;
+  margin-top:5px;
+  display:inline-block;
+  margin-bottom: 30px;
+}
+
+.vm-input-username {
+  width:20%;
+  display:inline-block;
+  min-width:200px;
+}
+
+.vm-container-msg {
+  background-color:#fafafa;
+  padding: 5px 25px;
+}
+
 /* Customize container */
 @media (min-width: 768px) {
   .container {
@@ -43,7 +72,7 @@ body {
 
 /* Main marketing message and sign up button */
 .jumbotron {
-  text-align: center;
+  text-align: left;
   border-bottom: 1px solid #e5e5e5;
 }
 .jumbotron .btn {
@@ -58,6 +87,8 @@ body {
 .marketing p + h4 {
   margin-top: 28px;
 }
+
+
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

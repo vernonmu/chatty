@@ -1,6 +1,7 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const port = 3000
+const express = require('express');
+const bodyParser = require('body-parser');
+const port = 3000;
+const messageRoute = require('./routes/message_route');
 
 const app = express()
 
@@ -11,20 +12,8 @@ var messages = []
 
 // end points
 
-app.get('/messages', function (req, res, next) {
-  res.status(200).json(messages)
-})
-
-
-app.post('/messages', function (req, res, next) {
-  let d = new Date()
-
-  // console.log(req.body, "user", req.body.user, req.body.messages)
-
-  messages.push({ user: req.body.user, message: req.body.message, time: d.toLocaleTimeString() })
-  res.status(200).json(messages)
-
-})
+app.get('/messages', messageRoute);
+app.post('/messages', messageRoute);
 
 // start app
 
